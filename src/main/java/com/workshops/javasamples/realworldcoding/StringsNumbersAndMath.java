@@ -10,12 +10,12 @@ public class StringsNumbersAndMath {
      * Counting duplicate characters
      */
 
-    public static Map<Character, Integer> countDuplicateCharacters(String str){
+    public static Map<String, Integer> countDuplicateCharacters(String str){
 
-        Map<Character, Integer> result = new HashMap<>();
+        Map<String, Integer> result = new HashMap<>();
 
         for (char ch : str.toCharArray()) {
-            result.compute(ch, (k,v) -> (v==null) ? 1 : ++v);
+            result.compute(String.valueOf(Character.toChars(ch)), (k,v) -> (v==null) ? 1 : ++v);
         }
 
         return result;
@@ -37,7 +37,7 @@ public class StringsNumbersAndMath {
 
     public static void main(String[] args) {
         String example = "aabbbccccdess";
-        Map<Character, Integer> result = countDuplicateCharacters(example);
+        Map<String, Integer> result = countDuplicateCharacters(example);
 
         Map<String, Long> duplicateCountJava8 = countDuplicateCharactersJava8(example);
         System.out.println(result.toString());
