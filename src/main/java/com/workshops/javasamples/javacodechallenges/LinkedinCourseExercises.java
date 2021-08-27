@@ -3,10 +3,7 @@ package com.workshops.javasamples.javacodechallenges;
 public class LinkedinCourseExercises {
 
     public static boolean isEven(int number){
-        if(number % 2 == 0) {
-            return false;
-        }
-        return true;
+        return number % 2 == 0;
     }
 
     public static void main(String[] args) {
