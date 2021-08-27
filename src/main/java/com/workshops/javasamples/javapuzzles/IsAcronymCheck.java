@@ -38,6 +38,7 @@ public class IsAcronymCheck {
                 return false;
             }
         }
+
         return true;
     }
 
