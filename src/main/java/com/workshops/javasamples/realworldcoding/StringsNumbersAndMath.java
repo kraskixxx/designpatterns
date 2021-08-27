@@ -24,9 +24,9 @@ public class StringsNumbersAndMath {
     /**
      * Counting duplicate characters V2
      */
-    public static Map<Character, Long> countDuplicateCharactersJava8(String str) {
-        Map<Character, Long> result = str.chars()
-                .mapToObj(c -> (char) c)
+    public static Map<String, Long> countDuplicateCharactersJava8(String str) {
+        Map<String, Long> result = str.codePoints()
+                .mapToObj(c -> String.valueOf(Character.toChars(c)))
                 .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
 
         return result;
@@ -39,7 +39,7 @@ public class StringsNumbersAndMath {
         String example = "aabbbccccdess";
         Map<Character, Integer> result = countDuplicateCharacters(example);
 
-        Map<Character, Long> duplicateCountJava8 = countDuplicateCharactersJava8(example);
+        Map<String, Long> duplicateCountJava8 = countDuplicateCharactersJava8(example);
         System.out.println(result.toString());
 
         System.out.println(duplicateCountJava8.toString());
