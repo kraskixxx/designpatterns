@@ -1,5 +1,7 @@
 package com.workshops.javasamples.javacodechallenges;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
@@ -139,8 +141,15 @@ public class LinkedinCourseExercises {
         return this.isStillPlaying;
     }
 
+    public static LocalDate calculateDateFromTodayByGivenDateAfter(LocalDate today, int daysAfter) {
+        Period givenDayPeriod = Period.ofDays(daysAfter);
+        return today.plus(givenDayPeriod);
+    }
+
     public static void main(String[] args) {
         boolean isEven = isEven(13);
         System.out.println(isEven);
+
+        System.out.println(calculateDateFromTodayByGivenDateAfter(LocalDate.now(), 122));
     }
 }
