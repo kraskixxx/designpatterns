@@ -20,4 +20,14 @@ class LinkedinCourseExercisesTest {
         assertFalse(LinkedinCourseExercises.isEven(-21));
         assertFalse(LinkedinCourseExercises.isEven(43));
     }
+
+    @Test
+    void isPasswordComplex_true(){
+        assertTrue(LinkedinCourseExercises.isPasswordComplex("Complex1"));
+    }
+
+    @Test
+    void isPasswordComplex_false(){
+        assertFalse(LinkedinCourseExercises.isPasswordComplex("123asd"));
+    }
 }
