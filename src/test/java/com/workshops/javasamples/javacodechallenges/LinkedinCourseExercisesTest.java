@@ -30,4 +30,14 @@ class LinkedinCourseExercisesTest {
     void isPasswordComplex_false(){
         assertFalse(LinkedinCourseExercises.isPasswordComplex("123asd"));
     }
+
+    @Test
+    void isPasswordComplexRegex_true(){
+        assertTrue(LinkedinCourseExercises.isPasswordComplexRegex("Complex1"));
+    }
+
+    @Test
+    void isPasswordComplexRegex_false(){
+        assertFalse(LinkedinCourseExercises.isPasswordComplexRegex("123asd"));
+    }
 }
